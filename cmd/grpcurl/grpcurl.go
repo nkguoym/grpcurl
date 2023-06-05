@@ -30,7 +30,7 @@ import (
 	// Register xds so xds and xds-experimental resolver schemes work
 	_ "google.golang.org/grpc/xds"
 
-	"github.com/fullstorydev/grpcurl"
+	"github.com/nkguoym/grpcurl"
 )
 
 // To avoid confusion between program error codes and the gRPC resonse
@@ -255,7 +255,6 @@ func (cs compositeSource) AllExtensionsForType(typeName string) ([]*desc.FieldDe
 	}
 	return exts, nil
 }
-
 func main() {
 	flags.Usage = usage
 	flags.Parse(os.Args[1:])
@@ -782,7 +781,7 @@ func prettify(docString string) string {
 		j++
 	}
 
-	return strings.Join(parts[:j], "\n"+indent())
+	return strings.Join(parts[:j], "\n")
 }
 
 func warn(msg string, args ...interface{}) {

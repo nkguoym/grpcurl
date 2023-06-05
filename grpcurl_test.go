@@ -24,9 +24,9 @@ import (
 	reflectpb "google.golang.org/grpc/reflection/grpc_reflection_v1alpha"
 	"google.golang.org/grpc/status"
 
-	. "github.com/fullstorydev/grpcurl"
-	grpcurl_testing "github.com/fullstorydev/grpcurl/internal/testing"
-	jsonpbtest "github.com/fullstorydev/grpcurl/internal/testing/jsonpb_test_proto"
+	. "github.com/nkguoym/grpcurl"
+	grpcurl_testing "github.com/nkguoym/grpcurl/internal/testing"
+	jsonpbtest "github.com/nkguoym/grpcurl/internal/testing/jsonpb_test_proto"
 )
 
 var (

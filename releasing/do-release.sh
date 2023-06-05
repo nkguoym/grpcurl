@@ -49,13 +49,13 @@ $PREFIX docker run --privileged --rm tonistiigi/binfmt:qemu-v6.1.0 --install all
 export DOCKER_CLI_EXPERIMENTAL=enabled
 $PREFIX docker buildx create --use --name multiarch-builder --node multiarch-builder0
 # push to docker hub, both the given version as a tag and for "latest" tag
-$PREFIX docker buildx build --platform linux/amd64,linux/s390x,linux/arm64,linux/ppc64le --tag fullstorydev/grpcurl:${VERSION} --tag fullstorydev/grpcurl:latest --push --progress plain --no-cache .
-$PREFIX docker buildx build --platform linux/amd64,linux/s390x,linux/arm64,linux/ppc64le --tag fullstorydev/grpcurl:${VERSION}-alpine --tag fullstorydev/grpcurl:latest-alpine --push --progress plain --no-cache --target alpine .
+$PREFIX docker buildx build --platform linux/amd64,linux/s390x,linux/arm64,linux/ppc64le --tag nkguoym/grpcurl:${VERSION} --tag nkguoym/grpcurl:latest --push --progress plain --no-cache .
+$PREFIX docker buildx build --platform linux/amd64,linux/s390x,linux/arm64,linux/ppc64le --tag nkguoym/grpcurl:${VERSION}-alpine --tag nkguoym/grpcurl:latest-alpine --push --progress plain --no-cache --target alpine .
 rm VERSION
 
 # Homebrew release
 
-URL="https://github.com/fullstorydev/grpcurl/archive/${VERSION}.tar.gz"
+URL="https://github.com/nkguoym/grpcurl/archive/${VERSION}.tar.gz"
 curl -L -o tmp.tgz "$URL"
 SHA="$(sha256sum < tmp.tgz | awk '{ print $1 }')"
 rm tmp.tgz
